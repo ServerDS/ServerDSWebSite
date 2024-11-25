@@ -1,0 +1,58 @@
+button {
+  user-select: none;
+  display: flex;
+  font-size: 16px;
+  background-color: #00000000;
+  color: var(--color-text-secondary);
+  padding: 7px 10px;
+  border-radius: 7px;
+  border-style: none;
+  text-decoration: none;
+  border: 1px solid transparent;
+
+  width: 100%;
+
+  transition: color 100ms linear;
+  transition: background-color 100ms linear;
+  transition: border-color 100ms linear;
+
+  cursor: pointer;
+  --background-color: red;
+}
+button:hover, :host.selected button {
+  border-color: var(--color-subtile-secondary);
+  background-color: var(--color-subtile-secondary);
+  color: var(--color-text);
+}
+
+span {
+  pointer-events: none;
+}
+.text {
+  align-self: center;
+}
+.icon {
+  display: inline-block;
+  font-family: "Segoe Fluent Icons Local";
+  margin: 0 12px 0 0;
+  font-weight: bold;
+  font-size: large;
+  align-self: center;
+}
+
+button::before {
+  display: block;
+  float: left;
+  content: ".";
+  background-color: var(--color-accent);
+  width: 5px;
+  height: 100%;
+  transform: translate(-15px, 0) scaleY(0) scaleX(0);
+  color: #00000000;
+  border-radius: 10px;
+
+  transition: transform 100ms linear;
+}
+:host.selected button::before {
+  transform: translate(-10px, 0) scaleY(0.8) scaleX(1);
+}

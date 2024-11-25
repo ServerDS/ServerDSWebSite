@@ -1,0 +1,28 @@
+:host {
+  flex-grow: 1;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+
+  height: 100%;
+
+
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  background-color: var(--color-layer);
+  padding: 20px 50px;
+  border-radius: 10px;
+
+  margin: auto;
+}
+
+h1 {
+  font-weight: normal;
+}

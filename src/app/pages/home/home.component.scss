@@ -1,0 +1,181 @@
+:host {
+  flex-grow: 1;
+}
+
+
+
+
+
+
+
+
+header {
+  position: sticky;
+  top: var(--header-height);
+
+
+
+  display: flex;
+  flex-direction: row;
+
+  height: 40px;
+  max-height: 40px;
+  flex-shrink: 0;
+  background-color: var(--color-layer);
+  backdrop-filter: blur(1rem);
+
+  flex-basis: var(--header-height);
+
+  border-bottom-left-radius: 10px;
+}
+body>header {
+  height: var(--header-height);
+  max-height: var(--header-height);
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-bottom-left-radius: 0;
+
+  z-index: 10;
+}
+header>div {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  gap: 10px;
+}
+header>div>img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+header>div>h1 {
+  padding: 0;
+  margin: 0;
+}
+header>div>h2 {
+  align-self: center;
+}
+header>div>h2>.icon {
+  display: inline-block;
+  font-family: "Segoe Fluent Icons Local";
+  margin: 0 6px 0 4px;
+  font-weight: bold;
+  font-size: smaller;
+  transform: translateY(2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section {
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+
+
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  display: inline;
+  flex-grow: 1;
+}
+.logo-article {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.info-panel {
+  background-color: var(--color-layer);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+
+  >h3 {
+    display: block;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+  }
+}
+hr {
+  border-color: rgba(80, 80, 80, 0.5);
+  border-style: solid;
+}
+
+footer {
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+
+
+
+
+
+
+
+.info-box, .warning-box, .success-box, .critical-box {
+  background-color: rgba(0, 150, 150, 0.0526);
+  padding: 15px;
+  margin: 3px;
+  border-radius: 5px;
+  font-size: 14px;
+  border-color: rgb(0, 0, 0, 0.1);
+  border-style: solid;
+  border-width: 2px;
+}
+.info-box b, .warning-box b, .success-box b, .critical-box b {
+  padding: 10px;
+}
+.info-box::before, .warning-box::before, .success-box::before, .critical-box::before {
+  background-color: rgb(96, 205, 255);
+  font-family: "Segoe Fluent Icons Local";
+  padding: 3px;
+  content: "";
+  border-radius: 100%;
+  color: black;
+  font-weight: bold;
+  font-size: smaller;
+}
+
+.warning-box {
+  background-color: rgb(67, 53, 25);
+}
+.warning-box::before {
+  background-color: rgb(252, 225, 0);
+  content: "";
+}
+
+.success-box {
+  background-color: rgb(57, 61, 27);
+}
+.success-box::before {
+  background-color: rgb(108, 203, 95);
+  content: "";
+}
+
+.critical-box {
+  background-color: rgb(68, 39, 38);
+}
+.critical-box::before {
+  background-color: rgb(255, 153, 164);
+  content: "";
+}
