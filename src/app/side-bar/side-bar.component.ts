@@ -18,7 +18,7 @@ export class SideBarComponent {
   constructor(private renderer: Renderer2) {}
 
 
-  ngOnInit() { window.onload = () => { this.runAfterLoad(); }; }
+  ngAfterViewInit() { window.onload = () => { this.runAfterLoad(); }; }
 
   runAfterLoad() {
 
@@ -34,6 +34,9 @@ export class SideBarComponent {
         if (element.classList.contains("selected")) {
           console.log(menu_element);
           this.renderer.addClass(menu_element.querySelector("button"), 'selected');
+
+          //menu_element.getElementsByClassName("content-box")[0].classList.add("selected");
+
           found = true;
 
         } else {

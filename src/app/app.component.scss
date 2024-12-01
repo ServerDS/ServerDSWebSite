@@ -8,7 +8,7 @@ main {
   background-image: url("https://res.cloudinary.com/vestbee/image/upload/c_scale,q_100,w_720/v1694178262/cyber_hero_1_voewzs.png");
   background-size: cover;
 
-  height: 100%;
+  min-height: 100dvh;
   --overflow: hidden;
 }
 
@@ -54,8 +54,8 @@ app-side-bar {
   top: var(--header-height);
   position: sticky;
 
-  width: 300px;
-  min-width: 300px;
+  width: 250px;
+  min-width: 250px;
   height: calc(100dvh - var(--header-height));
 
   padding: 0;

@@ -2,7 +2,7 @@
   flex-grow: 1;
 }
 
-section {
+main {
   display: flex;
   flex-direction: column;
 
@@ -17,12 +17,22 @@ section {
 
 div {
   background-color: var(--color-layer);
-  padding: 20px 50px;
+  padding: 20px 50px 50px 50px;
   border-radius: 10px;
 
   margin: auto;
 }
 
+b {
+  font-size: 144px;
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+}
 h1 {
   font-weight: normal;
+
+  margin: 0;
+  padding: 0;
 }

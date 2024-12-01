@@ -1,0 +1,49 @@
+:host {
+  position: sticky;
+  top: var(--header-height);
+
+
+  margin-left: 10px;
+
+
+  display: flex;
+  flex-direction: row;
+
+  height: 40px;
+  max-height: 40px;
+  flex-shrink: 0;
+  background-color: var(--color-layer);
+  backdrop-filter: blur(1rem);
+
+  flex-basis: var(--header-height);
+
+  border-bottom-left-radius: 10px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  gap: 10px;
+}
+
+h2 {
+  align-self: center;
+}
+.icon {
+  display: inline-block;
+  font-family: "Segoe Fluent Icons Local";
+  margin: 0 6px 0 4px;
+  font-weight: bold;
+  font-size: smaller;
+  transform: translateY(2px);
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  :host {
+    border-bottom-left-radius: 0;
+    margin-left: 0;
+  }
+}
