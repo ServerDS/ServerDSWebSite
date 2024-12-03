@@ -39,11 +39,16 @@
       </div>
       <div>
         <b>Ip1:</b>
-        serverds.enderman.cloud
+        {{ subdomain }}
       </div>
       <div>
         <b>Ip2:</b>
-        guineapig.fi.freemcserver.net:40989
+        {{ ip }}
+      </div>
+
+      <div class="warning-box">
+        <b>Статус</b>
+        <span>{{ status_label }}</span>
       </div>
     </div>
 
