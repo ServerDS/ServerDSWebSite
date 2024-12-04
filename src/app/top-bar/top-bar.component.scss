@@ -5,6 +5,8 @@ div {
   margin: 0;
   padding: 10px;
   gap: 10px;
+
+  width: 100%;
 }
 
 #menu-button {
@@ -40,6 +42,43 @@ img {
   margin: 0;
   padding: 0;
 }
+
+
+
+a.social-button {
+  background-color: rgba(255,255,255,.0605);
+  padding: 7px;
+
+  border-radius: 500px;
+  border: 1px solid rgba(255,255,255,.07);
+  border-top-color: rgba(255,255,255,.09);
+
+  cursor: pointer;
+  user-select: none;
+
+  -webkit-tap-highlight-color: white;
+
+  transition: background-color 100ms linear;
+}
+a.social-button img {
+  user-select: none;
+  aspect-ratio: 1/1;
+}
+a.social-button:hover {
+  background-color: rgba(255,255,255,.0837);
+}
+a.social-button.discord:hover {
+  background-color: #5865F2;
+}
+a.social-button.telegram:hover {
+  background-color: #2AABEE;
+}
+a.social-button.viber:hover {
+  background-color: #7360f2;
+}
+
+
+
 
 
 @media only screen and (max-width: 768px) {

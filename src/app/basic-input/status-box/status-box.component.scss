@@ -1,0 +1,58 @@
+:host {
+  display: flex;
+
+  gap: 15px;
+
+  background-color: rgba(0, 150, 150, 0.0526);
+  font-size: 14px;
+
+  padding: 15px;
+  margin: 3px;
+
+  border-radius: .5rem;
+  border: 2px solid rgb(0, 0, 0, 0.1);
+}
+:host::before {
+  background-color: rgb(96, 205, 255);
+  font-family: "Segoe Fluent Icons Local";
+  padding: 3px;
+  content: "";
+  border-radius: 100%;
+  color: black;
+  font-weight: bold;
+  font-size: smaller;
+}
+
+
+
+:host.warning {
+  background-color: rgb(67, 53, 25);
+}
+:host.warning::before {
+  background-color: rgb(252, 225, 0);
+  content: "";
+}
+
+
+
+:host.critical {
+  background-color: rgb(68, 39, 38);
+}
+:host.critical::before {
+  background-color: rgb(255, 153, 164);
+  content: "";
+}
+
+
+
+:host.success {
+  background-color: rgb(57, 61, 27);
+}
+:host.success::before {
+  background-color: rgb(108, 203, 95);
+  content: "";
+}
+
+.info-box b, .warning-box b, .success-box b, .critical-box b {
+  padding: 10px;
+}

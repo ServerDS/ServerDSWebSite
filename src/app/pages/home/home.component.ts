@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import {PageHeaderComponent} from '../../basic-input/page-header/page-header.component';
 import {PageFooterComponent} from '../../basic-input/page-footer/page-footer.component';
 import axios from 'axios';
+import {StatusBoxComponent} from '../../basic-input/status-box/status-box.component';
 
 
 @Component({
   selector: 'app-home',
   imports: [
     PageHeaderComponent,
-    PageFooterComponent
+    PageFooterComponent,
+    StatusBoxComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -17,9 +19,9 @@ import axios from 'axios';
 
 
 export class HomeComponent {
-  public subdomain = ""
-  public ip = ""
-  public status_label = ""
+  public subdomain = "serverds.enderman.cloud - (offline data)"
+  public ip = "guineapig.fi.freemcserver.net:40989 - (offline data)"
+  public status_label = "Неизвестно"
 
   private intervalId: any
   delay = 5000
@@ -27,7 +29,8 @@ export class HomeComponent {
 
   async fetchServerData() {
     try {
-      const response = await axios.get(`https://serverds-website-api.onrender.com/api/server/`);
+      const response = await axios.get(`http://localhost:3000/api/server/`);
+      //const response = await axios.get(`https://serverds-website-api.onrender.com/api/server/`);
       const serverData = response.data;
       console.log('Server Data:', serverData);
 

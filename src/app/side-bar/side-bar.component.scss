@@ -16,3 +16,34 @@ nav {
   padding: 10px;
   gap: 2px;
 }
+
+
+
+.old-site-link {
+  user-select: none;
+  display: block;
+  font-size: 16px;
+
+  background-image: linear-gradient(180deg, transparent 0%, white 500%);
+
+  text-align: center;
+  color: var(--color-text-secondary);
+  padding: 7px 10px;
+  border-radius: 7px;
+  text-decoration: none;
+
+  font-weight: bold;
+
+  border: 2px solid #0054d8;
+
+
+
+  transition: background-image 500ms linear;
+
+
+  cursor: pointer;
+  --background-color: red;
+}
+.old-site-link:hover {
+  background-image: linear-gradient(180deg, #003c9b 0%, #2f72da 100%);
+}

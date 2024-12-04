@@ -8,10 +8,29 @@
     <div class="info-panel">
       <h3>Информация</h3>
 
-      <div class="success-box">
+      <div>
+        <b>Name:</b>
+        ServerDS
+      </div>
+      <div>
+        <b>Ip1:</b>
+        {{ subdomain }}
+      </div>
+      <div>
+        <b>Ip2:</b>
+        {{ ip }}
+      </div>
+
+      <app-status-box class="warning">
+        <b>Статус</b>
+        <span>{{ status_label }}</span>
+      </app-status-box>
+
+      <hr/>
+      <app-status-box class="success">
         <b>Статус</b>
         <span style="font-weight: bolder; color: rgb(108, 203, 95);">Начался</span>
-      </div>
+      </app-status-box>
       <div>
         <b>Сезон:</b>
         8
@@ -32,24 +51,7 @@
         <b>Версия:</b>
         1.21.1
       </div>
-      <hr/>
-      <div>
-        <b>Name:</b>
-        ServerDS
-      </div>
-      <div>
-        <b>Ip1:</b>
-        {{ subdomain }}
-      </div>
-      <div>
-        <b>Ip2:</b>
-        {{ ip }}
-      </div>
 
-      <div class="warning-box">
-        <b>Статус</b>
-        <span>{{ status_label }}</span>
-      </div>
     </div>
 
   </section>
