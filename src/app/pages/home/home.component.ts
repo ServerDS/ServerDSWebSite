@@ -37,8 +37,8 @@ export class HomeComponent {
 
   async fetchServerData() {
     try {
-      const response = await axios.get(`http://localhost:3000/api/server/`);
-      //const response = await axios.get(`https://serverds-website-api.onrender.com/api/server/`);
+      //const response = await axios.get(`http://localhost:3000/api/server/`);
+      const response = await axios.get(`https://serverds-website-api.onrender.com/api/server/`);
       const serverData = response.data;
       console.log('Server Data:', serverData);
 
