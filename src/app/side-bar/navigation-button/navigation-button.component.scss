@@ -27,6 +27,8 @@ button:hover, :host.selected button {
 
 span {
   pointer-events: none;
+
+  align-self: center;
 }
 .text {
   align-self: center;
@@ -55,4 +57,12 @@ button::before {
 }
 :host.selected button::before {
   transform: translate(-10px, 0) scaleY(0.8) scaleX(1);
+}
+
+
+@media only screen and (max-width: 768px) {
+  button {
+    height: 60px;
+    font-size: larger;
+  }
 }

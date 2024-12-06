@@ -8,6 +8,7 @@ main {
 
   flex-grow: 1;
   height: 100%;
+  width: 100%;
 
   margin: 0;
   padding: 0;
@@ -15,14 +16,20 @@ main {
 section {
   display: inline;
   flex-grow: 1;
+
+  width: 100%;
 }
 article {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  flex-wrap: wrap;
+  padding: 25px;
+}
+article div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 
-  padding: 50px;
+  width: 100%;
+
+
+
 
   gap: 5px;
 }
@@ -35,11 +42,47 @@ article {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
-  margin-bottom: 10px;
-  width: 50%;
 }
 
 
-@media only screen and (max-width: 1000px) {
 
+article div img {
+  width: 100%;
+  margin: auto;
+
+  border-radius: 10px;
+  border: 5px solid rgba(255,255,255,.07);
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  transition: border-color .1s linear;
+}
+article div img:hover {
+  border-color: rgba(255,255,255,.25);
+}
+article div img.opened1 {
+  position: fixed;
+
+  width: 80%;
+
+
+
+  top: 10%;
+  left: 10%;
+
+  z-index: 20;
+}
+
+
+
+@media only screen and (max-width: 1250px) {
+  article div {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  article div {
+    grid-template-columns: 1fr;
+  }
 }

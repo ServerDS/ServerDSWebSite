@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
 import {PageHeaderComponent} from '../../basic-input/page-header/page-header.component';
 import {PageFooterComponent} from '../../basic-input/page-footer/page-footer.component';
 import axios from 'axios';
 import {StatusBoxComponent} from '../../basic-input/status-box/status-box.component';
+import {ButtonComponent} from '../../basic-input/button/button.component';
 
 
 @Component({
@@ -10,7 +11,8 @@ import {StatusBoxComponent} from '../../basic-input/status-box/status-box.compon
   imports: [
     PageHeaderComponent,
     PageFooterComponent,
-    StatusBoxComponent
+    StatusBoxComponent,
+    ButtonComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -19,8 +21,14 @@ import {StatusBoxComponent} from '../../basic-input/status-box/status-box.compon
 
 
 export class HomeComponent {
+  constructor(private renderer: Renderer2) {}
+
+  ServerStatusStyle = "information";
+  onlinePlayers = 0;
+  maxOnlinePlayers = 0;
+
   public subdomain = "serverds.enderman.cloud - (offline data)"
-  public ip = "guineapig.fi.freemcserver.net:40989 - (offline data)"
+  public ip = "whale.de.freemcserver.net:40989 - (offline data)"
   public status_label = "Неизвестно"
 
   private intervalId: any
@@ -29,8 +37,8 @@ export class HomeComponent {
 
   async fetchServerData() {
     try {
-      //const response = await axios.get(`http://localhost:3000/api/server/`);
-      const response = await axios.get(`https://serverds-website-api.onrender.com/api/server/`);
+      const response = await axios.get(`http://localhost:3000/api/server/`);
+      //const response = await axios.get(`https://serverds-website-api.onrender.com/api/server/`);
       const serverData = response.data;
       console.log('Server Data:', serverData);
 
@@ -39,11 +47,38 @@ export class HomeComponent {
       this.ip = serverData.server.node.dns_name + ":" + serverData.server.port
       this.status_label = serverData.server.status.label
 
+      if (serverData.server.running) {
+        this.onlinePlayers = serverData.server.online_players.online;
+        this.maxOnlinePlayers = serverData.server.online_players.max;
+      }
+
+      this.ServerStatusStyle = 'warning';
+
+
+      if (serverData.server.status.id == 1) {
+        if (serverData.server.running) {
+          this.status_label = "Запущен"
+
+          this.ServerStatusStyle = 'success';
+        } else {
+          this.status_label = "Не запущен"
+
+          this.ServerStatusStyle = 'critical';
+        }
+      }
+      if (serverData.server.status.id == 2) {
+        this.status_label = "Не продлен"
+
+        this.ServerStatusStyle = 'warning';
+      }
+
+
+
 
       this.delay = 5000
     } catch (error) {
-      // @ts-ignore
 
+      // @ts-ignore
       console.error('Error fetching server data:', error.message);
 
       // @ts-ignore
@@ -64,6 +99,8 @@ export class HomeComponent {
       //clearInterval(this.intervalId);
     }
   }
+
+  protected readonly window = window;
 }
 
 

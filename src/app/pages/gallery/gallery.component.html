@@ -1,19 +1,21 @@
 <main>
-  <app-page-header/>
+  <app-page-header>
+    <span class="icon"></span>
+    Галерея
+  </app-page-header>
 
   <section>
 
     <img class="logo-article" src="model_SDS_title_8.png" width="300px"/>
 
     <article>
-
-      <img src="gallery/season1/0-02-05-5e096d1e64ea8825b15a44e33c7c8d05d86380ebc7c0d5635ef9ccbe97467b33_63e240c338c56cac.jpg"/>
-      <img src="gallery/season1/0-02-05-5e096d1e64ea8825b15a44e33c7c8d05d86380ebc7c0d5635ef9ccbe97467b33_63e240c338c56cac.jpg"/>
-      <img src="gallery/season1/0-02-05-5e096d1e64ea8825b15a44e33c7c8d05d86380ebc7c0d5635ef9ccbe97467b33_63e240c338c56cac.jpg"/>
-
+      <div #imageContainer>
+        <img *ngFor="let image of images" [src]="image" class="gallery-image" (click)="onImageClick($event)">
+      </div>
     </article>
 
   </section>
 
   <app-page-footer/>
 </main>
+<app-modal [showModal]="showModal" [imageSrc]="selectedImage" (closeEvent)="closeModal()"> </app-modal>

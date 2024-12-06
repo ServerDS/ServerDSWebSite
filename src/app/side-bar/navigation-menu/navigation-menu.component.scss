@@ -11,6 +11,7 @@ button {
 
   justify-content: space-between;
 
+
   color: var(--color-text-secondary);
 
   border-radius: 7px;
@@ -33,7 +34,6 @@ button::after {
 button.active::after {
   transform: rotate(180deg);
 }
-
 
 button>div {
   display: flex;
@@ -102,4 +102,10 @@ div.active ~ button {
   padding: 10px;
   padding-left: 10px;
   padding-right: 0;
+}
+@media only screen and (max-width: 768px) {
+  button {
+    height: 60px;
+    font-size: larger;
+  }
 }

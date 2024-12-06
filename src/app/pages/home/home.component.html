@@ -1,5 +1,8 @@
 <main>
-  <app-page-header/>
+  <app-page-header>
+    <span class="icon"></span>
+    Главная
+  </app-page-header>
 
   <section>
 
@@ -21,12 +24,24 @@
         {{ ip }}
       </div>
 
-      <app-status-box class="warning">
+      <app-status-box [class]="ServerStatusStyle">
         <b>Статус</b>
         <span>{{ status_label }}</span>
       </app-status-box>
 
-      <hr/>
+      <div>
+        <b>Игроков онлайн: </b>
+        {{ onlinePlayers }}/{{ maxOnlinePlayers }}
+      </div>
+
+
+      <app-button (click)="window.open('https://freemcserver.net/server/680613', '_blank')">
+        Продлить сервер
+      </app-button>
+    </div>
+
+    <div class="info-panel">
+
       <app-status-box class="success">
         <b>Статус</b>
         <span style="font-weight: bolder; color: rgb(108, 203, 95);">Начался</span>
@@ -37,7 +52,7 @@
       </div>
       <div>
         <b>Количество участников:</b>
-        7
+        6
       </div>
       <div>
         <b>Старт:</b>
@@ -45,12 +60,27 @@
       </div>
       <div>
         <b>Конец:</b>
-        ?
+        не скоро!
       </div>
       <div>
         <b>Версия:</b>
         1.21.1
       </div>
+      <hr/>
+
+      <h3>Состав</h3>
+
+      <div>
+        <ol>
+          <li>YTDL03</li>
+          <li>DogFilka_228</li>
+          <li>Chig__Grik</li>
+          <li>hanamzenok</li>
+          <li>Htosy</li>
+          <li>Lisi_Aboba</li>
+        </ol>
+      </div>
+
 
     </div>
 

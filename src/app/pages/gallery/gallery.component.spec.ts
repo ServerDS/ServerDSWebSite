@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CommonModule } from '@angular/common';
 import { GalleryComponent } from './gallery.component';
 
 describe('GalleryComponent', () => {

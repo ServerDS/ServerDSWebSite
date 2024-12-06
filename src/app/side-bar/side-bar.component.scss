@@ -47,3 +47,72 @@ nav {
 .old-site-link:hover {
   background-image: linear-gradient(180deg, #003c9b 0%, #2f72da 100%);
 }
+
+
+
+
+.social-buttons {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+a.social-button {
+  display: flex;
+
+
+  background-color: rgba(255,255,255,.0605);
+  padding: 15px;
+
+  gap: 15px;
+
+  height: 50px;
+
+  border-radius: 500px;
+  border: 1px solid rgba(255,255,255,.07);
+  border-top-color: rgba(255,255,255,.09);
+
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+
+  -webkit-tap-highlight-color: white;
+
+  transition: background-color 100ms linear;
+}
+a.social-button img {
+
+
+
+  user-select: none;
+  aspect-ratio: 1/1;
+  height: 35px;
+
+
+  text-align: center;
+  align-self: center;
+}
+a.social-button:hover {
+  background-color: rgba(255,255,255,.0837);
+}
+a.social-button.discord:hover {
+  background-color: #5865F2;
+}
+a.social-button.telegram:hover {
+  background-color: #2AABEE;
+}
+a.social-button.viber:hover {
+  background-color: #7360f2;
+}
+a.social-button span {
+  align-self: center;
+
+}
+@media only screen and (max-width: 768px) {
+  #menu-button {
+    display: block;
+  }
+  .social-buttons {
+    display: flex;
+  }
+}

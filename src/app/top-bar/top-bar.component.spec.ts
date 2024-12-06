@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CommonModule } from '@angular/common';
 import { TopBarComponent } from './top-bar.component';
 
 describe('TopBarComponent', () => {

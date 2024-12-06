@@ -46,8 +46,19 @@ img {
 
 
 a.social-button {
+  display: flex;
+  flex-direction: row;
+
   background-color: rgba(255,255,255,.0605);
   padding: 7px;
+
+  gap: 5px;
+
+
+  width: 500px;
+
+  overflow: clip;
+
 
   border-radius: 500px;
   border: 1px solid rgba(255,255,255,.07);
@@ -55,6 +66,7 @@ a.social-button {
 
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
 
   -webkit-tap-highlight-color: white;
 
@@ -63,6 +75,9 @@ a.social-button {
 a.social-button img {
   user-select: none;
   aspect-ratio: 1/1;
+
+  text-align: center;
+  align-self: center;
 }
 a.social-button:hover {
   background-color: rgba(255,255,255,.0837);
@@ -76,7 +91,10 @@ a.social-button.telegram:hover {
 a.social-button.viber:hover {
   background-color: #7360f2;
 }
-
+a.social-button span {
+  text-align: center;
+  margin: auto;
+}
 
 
 
@@ -84,5 +102,8 @@ a.social-button.viber:hover {
 @media only screen and (max-width: 768px) {
   #menu-button {
     display: block;
+  }
+  a.social-button {
+    display: none;
   }
 }

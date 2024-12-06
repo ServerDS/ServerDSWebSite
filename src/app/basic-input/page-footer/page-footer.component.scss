@@ -8,7 +8,7 @@
   flex-direction: row;
 
   height: 40px;
-  max-height: 40px;
+  --max-height: 40px;
   flex-shrink: 0;
   background-color: var(--color-layer);
   backdrop-filter: blur(1rem);
