@@ -28,8 +28,9 @@ export class HomeComponent {
   maxOnlinePlayers = 0;
 
   public subdomain = "serverds.enderman.cloud - (offline data)"
-  public ip = "whale.de.freemcserver.net:40989 - (offline data)"
+  public ip = "guineapig.fi.freemcserver.net:32617 - (offline data)"
   public status_label = "Неизвестно"
+  public expires_at = "Неизвестно"
 
   private intervalId: any
   delay = 5000
@@ -43,8 +44,9 @@ export class HomeComponent {
       console.log('Server Data:', serverData);
 
 
-      this.subdomain = serverData.server.subdomains[0].fqdn
+      this.subdomain = serverData.server.subdomains[1].fqdn
       this.ip = serverData.server.node.dns_name + ":" + serverData.server.port
+      this.expires_at = serverData.server.expires_at
       this.status_label = serverData.server.status.label
 
       if (serverData.server.running) {

@@ -1,10 +1,9 @@
-:host {
+:host ::ng-deep {
   position: sticky;
   top: var(--header-height);
 
 
   margin-left: 10px;
-
 
   display: flex;
   flex-direction: row;
@@ -18,6 +17,15 @@
   flex-basis: var(--header-height);
 
   border-bottom-left-radius: 10px;
+
+  .icon {
+    display: inline-block;
+    font-family: "Segoe Fluent Icons Local", serif;
+    margin: 0 6px 0 4px;
+    font-weight: bold;
+    font-size: smaller;
+    transform: translateY(2px);
+  }
 }
 
 header {
@@ -30,15 +38,7 @@ header {
 h2 {
   align-self: center;
 }
-.icon {
-  display: inline-block;
-  background-color: #2AABEE;
-  font-family: "Segoe Fluent Icons Local";
-  margin: 0 6px 0 4px;
-  font-weight: bold;
-  font-size: smaller;
-  transform: translateY(2px);
-}
+
 
 
 @media only screen and (max-width: 768px) {

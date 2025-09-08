@@ -6,7 +6,7 @@
 
   <section>
 
-    <img class="logo-article" src="model_SDS_title_8.png" width="300px"/>
+    <img class="logo-article" src="model_SDS_title_gold.png" width="300px"/>
 
     <div class="info-panel">
       <h3>Информация</h3>
@@ -30,12 +30,17 @@
       </app-status-box>
 
       <div>
+        <b>Срок действия сервера истекает: </b>
+        {{ expires_at }}
+      </div>
+
+      <div>
         <b>Игроков онлайн: </b>
         {{ onlinePlayers }}/{{ maxOnlinePlayers }}
       </div>
 
 
-      <app-button (click)="window.open('https://freemcserver.net/server/680613', '_blank')">
+      <app-button (click)="window.open('https://freemcserver.net/server/1712628', '_blank')">
         Продлить сервер
       </app-button>
     </div>
@@ -48,15 +53,15 @@
       </app-status-box>
       <div>
         <b>Сезон:</b>
-        8
+        9
       </div>
       <div>
         <b>Количество участников:</b>
-        6
+        5
       </div>
       <div>
         <b>Старт:</b>
-        12.10.2024 - 20:00
+        30.06.2025 - 20:00
       </div>
       <div>
         <b>Конец:</b>
@@ -64,7 +69,7 @@
       </div>
       <div>
         <b>Версия:</b>
-        1.21.1
+        1.21.8
       </div>
       <hr/>
 
@@ -76,7 +81,6 @@
           <li>DogFilka_228</li>
           <li>Chig__Grik</li>
           <li>hanamzenok</li>
-          <li>Htosy</li>
           <li>Lisi_Aboba</li>
         </ol>
       </div>

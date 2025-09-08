@@ -1,14 +1,18 @@
 import { Routes } from '@angular/router';
 import {Error404Component} from './pages/error404/error404.component';
 import {HomeComponent} from './pages/home/home.component';
-import {Season7Component} from './pages/season7/season7.component';
+
 import {GalleryComponent} from './pages/gallery/gallery.component';
+
 import {Season1Component} from './pages/season1/season1.component';
 import {Season2Component} from './pages/season2/season2.component';
 import {Season3Component} from './pages/season3/season3.component';
 import {Season4Component} from './pages/season4/season4.component';
 import {Season5Component} from './pages/season5/season5.component';
 import {Season6Component} from './pages/season6/season6.component';
+import {Season7Component} from './pages/season7/season7.component';
+import {Season8Component} from './pages/season8/season8.component';
+
 import {SkyBlock1Component} from './pages/sky-block1/sky-block1.component';
 
 export const routes: Routes = [
@@ -104,6 +108,16 @@ export const routes: Routes = [
   {
     path: "season7/home",
     component: Season7Component
+  },
+
+  {
+    path: "season8",
+    redirectTo: 'season8/home',
+    pathMatch: 'full',
+  },
+  {
+    path: "season8/home",
+    component: Season8Component
   },
 
   {

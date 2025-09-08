@@ -7,13 +7,12 @@
   display: flex;
   flex-direction: row;
 
-  height: 40px;
-  --max-height: 40px;
+  padding: 10px;
   flex-shrink: 0;
   background-color: var(--color-layer);
   backdrop-filter: blur(1rem);
 
-  flex-basis: var(--header-height);
+  flex-basis: 50px;
 
   border-top-left-radius: 10px;
 }
@@ -21,7 +20,7 @@
 footer {
   display: flex;
   flex-direction: row;
-  margin: 10px;
+  margin: auto;
   gap: 10px;
 }
 @media only screen and (max-width: 768px) {
