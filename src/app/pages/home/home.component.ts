@@ -4,6 +4,8 @@ import {PageFooterComponent} from '../../basic-input/page-footer/page-footer.com
 import axios from 'axios';
 import {StatusBoxComponent} from '../../basic-input/status-box/status-box.component';
 import {ButtonComponent} from '../../basic-input/button/button.component';
+import {format} from 'node:url';
+import dayjs from 'dayjs';
 
 
 @Component({
@@ -30,10 +32,16 @@ export class HomeComponent {
   public subdomain = "serverds.enderman.cloud - (offline data)"
   public ip = "guineapig.fi.freemcserver.net:32617 - (offline data)"
   public status_label = "Неизвестно"
-  public expires_at = "Неизвестно"
+  public expires_at_label = "Неизвестно"
+  public expire_time_label = "Неизвестно"
+  public running = false;
 
-  private intervalId: any
-  delay = 5000
+  public expires_at = new Date();
+  public player_expires_at = new Date();
+
+  private secondIntervalId: any;
+  private dataRefetchIntervalId: any;
+  delay = 1000;
 
 
   async fetchServerData() {
@@ -46,8 +54,14 @@ export class HomeComponent {
 
       this.subdomain = serverData.server.subdomains[1].fqdn
       this.ip = serverData.server.node.dns_name + ":" + serverData.server.port
-      this.expires_at = serverData.server.expires_at
+      this.expires_at_label = serverData.server.expires_at
+
+      this.expires_at = new Date(serverData.server.expires_at.split(' ').join('T')+'Z')
+      this.player_expires_at = new Date(serverData.server.player_expires_at.split(' ').join('T')+'Z')
+
       this.status_label = serverData.server.status.label
+
+      this.running = serverData.server.running
 
       if (serverData.server.running) {
         this.onlinePlayers = serverData.server.online_players.online;
@@ -91,29 +105,50 @@ export class HomeComponent {
     }
   }
 
+  OneSecInterval() {
+    let dateNow = new Date();
+    let diffTime;
+    if (this.running) {
+      diffTime = this.player_expires_at.getTime() - dateNow.getTime();
+    } else {
+      diffTime = this.expires_at.getTime() - dateNow.getTime();
+    }
+
+
+
+    const totalSeconds = Math.floor(diffTime / 1000);
+    const totalMinutes = Math.floor(totalSeconds / 60);
+    const totalHours = Math.floor(totalMinutes / 60);
+
+    const remSeconds = totalSeconds % 60;
+    const remMinutes = totalMinutes % 60;
+
+    let h = totalHours;
+    let m = remMinutes;
+    let s = remSeconds;
+
+
+
+    if (s<=0 && m<=0 && h<=0) {
+      this.expire_time_label = "Истёк"
+    } else {
+      this.expire_time_label = h.toString().padStart(2, "0")+":"+m.toString().padStart(2, "0")+":"+s.toString().padStart(2, "0");
+    }
+  }
 
   ngOnInit() {
-    //this.intervalId = setInterval(() => this.fetchServerData(), 10000);
-    this.fetchServerData()
+    this.fetchServerData();
+    this.secondIntervalId = setInterval(() => this.OneSecInterval(), 1000);
+    this.dataRefetchIntervalId = setInterval(() => this.fetchServerData(), 10000);
   }
   ngOnDestroy() {
-    if (this.intervalId) {
-      //clearInterval(this.intervalId);
+    if (this.secondIntervalId) {
+      clearInterval(this.secondIntervalId);
+    }
+    if (this.dataRefetchIntervalId) {
+      clearInterval(this.dataRefetchIntervalId);
     }
   }
 
   protected readonly window = window;
 }
-
-
-
-const apiToken = '7b18cebd6amsh182380e572b9869p19046ejsn752502899000';
-const serverId = '680613';
-const FMCSToken = "SCOPED eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJGcmVlTWNTZXJ2ZXIubmV0Iiwic2NvcGUiOiJVU0VSIiwic2NvcGVSZXN0cmljdGlvbiI6bnVsbCwidXNlcl9pZCI6OTg1ODM4LCJiYXNlX2tleSI6IjhkZTJlZGY3YzYyZTUzZjY1NGNmOGExOGE0ZDAwNjNjIiwiaXNzdWVkX2F0IjoiMjAyNC0xMS0yMyAxNToxOTowMCIsImlzc3VlZF90byI6IjE4LjE4NC4yMTQuMzMifQ.PX43VY5hxVLSzDGH4PiRhgqwFXFERPCIEwZ9vjXp-Jw";
-
-
-
-
-
-
-

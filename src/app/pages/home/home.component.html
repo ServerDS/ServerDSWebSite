@@ -24,6 +24,9 @@
         {{ ip }}
       </div>
 
+      <hr/>
+      <h3>Статус</h3>
+
       <app-status-box [class]="ServerStatusStyle">
         <b>Статус</b>
         <span>{{ status_label }}</span>
@@ -31,7 +34,12 @@
 
       <div>
         <b>Срок действия сервера истекает: </b>
-        {{ expires_at }}
+        {{ expires_at_label }}
+      </div>
+
+      <div>
+        <b>Срок действия сервера: </b>
+        {{ expire_time_label }}
       </div>
 
       <div>
@@ -46,6 +54,7 @@
     </div>
 
     <div class="info-panel">
+      <h3>Сервер</h3>
 
       <app-status-box class="success">
         <b>Статус</b>
@@ -69,7 +78,7 @@
       </div>
       <div>
         <b>Версия:</b>
-        1.21.8
+        1.21.7-1.21.8
       </div>
       <hr/>
 
