@@ -17,6 +17,10 @@ main {
 section {
   display: inline;
   flex-grow: 1;
+
+  ul, ol {
+    padding-left: 8px;
+  }
 }
 
 

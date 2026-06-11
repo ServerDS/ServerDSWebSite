@@ -12,6 +12,7 @@ import {Season5Component} from './pages/season5/season5.component';
 import {Season6Component} from './pages/season6/season6.component';
 import {Season7Component} from './pages/season7/season7.component';
 import {Season8Component} from './pages/season8/season8.component';
+import {Season9Component} from './pages/season9/season9.component';
 
 import {SkyBlock1Component} from './pages/sky-block1/sky-block1.component';
 
@@ -118,6 +119,16 @@ export const routes: Routes = [
   {
     path: "season8/home",
     component: Season8Component
+  },
+
+  {
+    path: "season9",
+    redirectTo: 'season9/home',
+    pathMatch: 'full',
+  },
+  {
+    path: "season9/home",
+    component: Season9Component
   },
 
   {
