@@ -3,7 +3,7 @@ import {PageFooterComponent} from '../../basic-input/page-footer/page-footer.com
 import {PageHeaderComponent} from '../../basic-input/page-header/page-header.component';
 import {StatusBoxComponent} from '../../basic-input/status-box/status-box.component';
 import {ImagesService} from './images.service';
-import {CommonModule, NgForOf} from '@angular/common';
+
 import {ModalComponent} from '../../basic-input/modal/modal.component';
 
 @Component({
@@ -12,9 +12,8 @@ import {ModalComponent} from '../../basic-input/modal/modal.component';
     PageFooterComponent,
     PageHeaderComponent,
     StatusBoxComponent,
-    NgForOf,
     ModalComponent
-  ],
+],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss'
 })

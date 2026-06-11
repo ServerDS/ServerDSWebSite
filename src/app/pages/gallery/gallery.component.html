@@ -10,7 +10,9 @@
 
     <article>
       <div #imageContainer>
-        <img *ngFor="let image of images" [src]="image" class="gallery-image" (click)="onImageClick($event)">
+        @for (image of images; track image) {
+          <img [src]="image" class="gallery-image" (click)="onImageClick($event)">
+        }
       </div>
     </article>
 

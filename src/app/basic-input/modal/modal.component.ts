@@ -1,13 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import {NgClass, NgIf} from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   imports: [
-    NgClass,
-    NgIf
-  ],
+    NgClass
+],
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
