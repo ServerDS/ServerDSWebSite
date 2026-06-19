@@ -1,0 +1,31 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Замените на master, если ваша главная ветка называется master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Укажите версию Node.js вашего проекта
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular application
+        run: ./node_modules/.bin/ng build --configuration production --base-href "https://github.io"
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/server-dsweb-site # Проверьте, совпадает ли путь с вашим Angular-проектом
+          branch: gh-pages
