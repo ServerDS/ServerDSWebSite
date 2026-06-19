@@ -27,5 +27,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/server-dsweb-site # Проверьте, совпадает ли путь с вашим Angular-проектом
+          folder: dist/server-dsweb-site/browser  # Проверьте, совпадает ли путь с вашим Angular-проектом
           branch: gh-pages
