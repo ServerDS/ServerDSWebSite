@@ -6,12 +6,20 @@
 
   <section>
 
-    <img class="logo-article" src="model_SDS_title_8.png" width="300px"/>
+    <img class="logo-article" src="model_SDS_title_gold.png" width="300px"/>
 
     <article>
-      <div #imageContainer>
+      <p>Количество картинок: {{ imageItems.length }}</p>
+      <gallery [items]="imageItems" thumbPosition="left"></gallery>
+<!--      <gallery>-->
+<!--        @for (image of images; track image) {-->
+<!--          <img [src]="image" class="gallery-image" (click)="onImageClick($event)">-->
+<!--        }-->
+<!--      </gallery>-->
+<!--      <in-gallery-component></in-gallery-component>-->
+      <div class="imagesContainer" [lightbox]="1">
         @for (image of images; track image) {
-          <img [src]="image" class="gallery-image" (click)="onImageClick($event)">
+          <img [src]="image" (click)="onImageClick($event)" alt="">
         }
       </div>
     </article>

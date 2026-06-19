@@ -1,10 +1,11 @@
-import {Component, ElementRef, HostBinding, Input, Renderer2, ViewChild} from '@angular/core';
+import {Component, ElementRef, HostBinding, Input, Renderer2, ViewChild, ChangeDetectionStrategy} from '@angular/core';
 import {style} from '@angular/animations';
 
 @Component({
   selector: 'app-navigation-menu',
   imports: [],
   templateUrl: './navigation-menu.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './navigation-menu.component.scss'
 })
 export class NavigationMenuComponent {

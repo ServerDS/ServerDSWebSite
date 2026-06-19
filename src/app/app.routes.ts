@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import {Error404Component} from './pages/error404/error404.component';
 import {HomeComponent} from './pages/home/home.component';
 
-import {GalleryComponent} from './pages/gallery/gallery.component';
+import {PageGalleryComponent} from './pages/gallery/gallery.component';
 
 import {Season1Component} from './pages/season1/season1.component';
 import {Season2Component} from './pages/season2/season2.component';
@@ -28,7 +28,7 @@ export const routes: Routes = [
   },
   {
     path: "gallery",
-    component: GalleryComponent
+    component: PageGalleryComponent
   },
 
   {

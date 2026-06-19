@@ -1,4 +1,4 @@
-import {Component, Input, Renderer2} from '@angular/core';
+import {Component, Input, Renderer2, ChangeDetectionStrategy} from '@angular/core';
 import {NavigationButtonComponent} from './navigation-button/navigation-button.component';
 import {NavigationMenuComponent} from './navigation-menu/navigation-menu.component';
 import {RouterLink, RouterLinkActive} from '@angular/router';
@@ -12,6 +12,7 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
     RouterLinkActive
   ],
   templateUrl: './side-bar.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './side-bar.component.scss'
 })
 export class SideBarComponent {

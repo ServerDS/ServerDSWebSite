@@ -1,9 +1,10 @@
-import {Component, ElementRef, Input, Renderer2} from '@angular/core';
+import {Component, ElementRef, Input, Renderer2, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: 'app-navigation-button',
   imports: [],
   templateUrl: './navigation-button.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './navigation-button.component.scss'
 })
 export class NavigationButtonComponent {

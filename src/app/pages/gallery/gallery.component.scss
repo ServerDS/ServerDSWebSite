@@ -22,7 +22,7 @@ section {
 article {
   padding: 25px;
 }
-article div {
+.imagesContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
@@ -46,7 +46,7 @@ article div {
 
 
 
-article div img {
+.imagesContainer img {
   width: 100%;
   margin: auto;
 
@@ -58,10 +58,10 @@ article div img {
 
   transition: border-color .1s linear;
 }
-article div img:hover {
+.imagesContainer img:hover {
   border-color: rgba(255,255,255,.25);
 }
-article div img.opened1 {
+.imagesContainer img.opened1 {
   position: fixed;
 
   width: 80%;
@@ -77,12 +77,12 @@ article div img.opened1 {
 
 
 @media only screen and (max-width: 1250px) {
-  article div {
+  .imagesContainer {
     grid-template-columns: 1fr 1fr;
   }
 }
 @media only screen and (max-width: 1000px) {
-  article div {
+  .imagesContainer {
     grid-template-columns: 1fr;
   }
 }

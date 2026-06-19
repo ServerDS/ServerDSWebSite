@@ -1,4 +1,4 @@
-import {Component, Renderer2} from '@angular/core';
+import {Component, Renderer2, ChangeDetectionStrategy} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 
 @Component({
@@ -7,6 +7,7 @@ import {NgOptimizedImage} from '@angular/common';
     NgOptimizedImage
   ],
   templateUrl: './top-bar.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './top-bar.component.scss'
 })
 export class TopBarComponent {

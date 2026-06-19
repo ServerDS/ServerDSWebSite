@@ -1,11 +1,9 @@
-import {Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
+import {Component, ElementRef, Renderer2, ViewChild, ChangeDetectionStrategy} from '@angular/core';
 import {PageHeaderComponent} from '../../basic-input/page-header/page-header.component';
 import {PageFooterComponent} from '../../basic-input/page-footer/page-footer.component';
 import axios from 'axios';
 import {StatusBoxComponent} from '../../basic-input/status-box/status-box.component';
 import {ButtonComponent} from '../../basic-input/button/button.component';
-import {format} from 'node:url';
-import dayjs from 'dayjs';
 
 
 @Component({
@@ -17,6 +15,7 @@ import dayjs from 'dayjs';
     ButtonComponent
   ],
   templateUrl: './home.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './home.component.scss'
 })
 

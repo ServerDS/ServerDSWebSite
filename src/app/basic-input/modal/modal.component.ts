@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -7,6 +7,7 @@ import { NgClass } from '@angular/common';
   imports: [
     NgClass
 ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {

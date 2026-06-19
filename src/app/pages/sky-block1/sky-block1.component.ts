@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {PageFooterComponent} from '../../basic-input/page-footer/page-footer.component';
 import {PageHeaderComponent} from '../../basic-input/page-header/page-header.component';
 import {StatusBoxComponent} from '../../basic-input/status-box/status-box.component';
@@ -11,6 +11,7 @@ import {StatusBoxComponent} from '../../basic-input/status-box/status-box.compon
     StatusBoxComponent
   ],
   templateUrl: './sky-block1.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './sky-block1.component.scss'
 })
 export class SkyBlock1Component {
